@@ -30,6 +30,10 @@ function render(variables = {}) {
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
   let Name = variables.name;
   if (variables.name == null) Name = "Mafe";
+  let AvatarURL = variables.avatarURL;
+  if (variables.name == null) AvatarURL = "src/js/img/ mw.png";
+  if (Name != "Mafer")
+    variables.avatarURL = "https://randomuser.me/api/portraits/women/42.jpg";
   let LastName = variables.lastname;
   if (variables.lastname == null) LastName = "Walker";
   let Job = variables.role;
@@ -37,20 +41,20 @@ function render(variables = {}) {
   let Twitter = variables.twitter;
   if (variables.twitter == null) Twitter = "https://twitter.com/MafeWalker";
   if (Twitter !== "https://twitter.com/MafeWalker")
-    Twitter = "https://twitter.com/4geeksacademy";
+    Twitter = "https://twitter.com/" + Twitter;
   let Github = variables.github;
   if (variables.github == null) Github = "https://github.com/mafewalker";
   if (Github !== "https://github.com/mafewalker")
-    Github = "https://github.com/4geeksacademy";
+    Github = "https://github.com/" + Github;
   let Linkedin = variables.linkedin;
   if (variables.linkedin == null) Linkedin = "https://linkedin.com/mafe.walker";
   if (Linkedin !== "https://linkedin.com/mafe.walker")
-    Linkedin = "https://linkedin.com/4geeksacademy";
+    Linkedin = "https://linkedin.com/" + Linkedin;
   let Instagram = variables.instagram;
   if (variables.instagram == null)
     Instagram = "https://instagram.com/mafewalker";
   if (Instagram !== "https://instagram.com/mafewalker")
-    Instagram = "https://instagram.com/4geeksacademy";
+    Instagram = "https://instagram.com/" + Instagram;
   let Estado = variables.city;
   if (variables.city == null) Estado = "New Marte";
   let Country = variables.country;
@@ -61,7 +65,7 @@ function render(variables = {}) {
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
-          <img src="${variables.avatarURL}" class="photo" />
+          <img src=${variables.avatarURL} class="photo" />
           <h1>${Name} ${LastName}</h1>
           <h2>${Job}</h2>
           <h3>${Estado}, ${Country}</h3>
@@ -85,12 +89,12 @@ window.onload = function() {
     // this is the url of the image that will used as background for the profile cover
     background: "https://images.unsplash.com/photo-1511974035430-5de47d3b95da",
     // this is the url for the profile avatar
-    avatarURL: "https://randomuser.me/api/portraits/women/42.jpg",
+    avatarURL: null,
     // social media bar position (left or right)
     socialMediaPosition: "position-left",
     // social media usernames
     twitter: null,
-    github: "alesanchezr",
+    github: null,
     linkedin: null,
     instagram: null,
     name: null,

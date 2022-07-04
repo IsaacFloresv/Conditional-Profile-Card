@@ -1,4 +1,4 @@
-import "../style/index.css";
+import "../style/style.css";
 
 /**
  *  EDIT ONLY INSIDE THIS RENDER FUNCTION
@@ -28,15 +28,26 @@ function render(variables = {}) {
   // if includeCover==false then we reset the cover code without the <img> tag to make the cover transparent.
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
+  let Name = variables.name;
+  let LastName = variables.lastname;
+  let Job = variables.role;
+  let Github = variables.github;
+  let Twitter = variables.twitter;
+  let Linkedin = variables.linkedin;
+  let Instagram = variables.instagram;
+  let Estado = variables.city;
+  let Contry = variables.country;
+  let Position = `class="position-${variables.socialMediaPosition}"`;
+  if (variables.Position == false) Position = 'class="position-right"';
 
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
-          <ul class="position-right">
+          <h1>${Name} ${LastName}</h1>
+          <h2>${Job}</h2>
+          <h3>${Estado}, ${Contry}</h3>
+          <ul ${Position}>
             <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
             <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
             <li><a href="https://linkedin.com/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>

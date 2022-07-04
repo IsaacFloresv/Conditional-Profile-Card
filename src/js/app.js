@@ -29,25 +29,34 @@ function render(variables = {}) {
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
   let Name = variables.name;
-  if (variables.name == false) Name = "Mafe";
+  if (variables.name == null) Name = "Mafe";
   let LastName = variables.lastname;
-  if (variables.lastname == false) LastName = "Walker";
+  if (variables.lastname == null) LastName = "Walker";
   let Job = variables.role;
-  if (variables.role == false) Job = "Interprete";
-  let Github = variables.github;
-  if (variables.github == false) Github = "mafewalker";
+  if (variables.role == null) Job = "Interprete";
   let Twitter = variables.twitter;
-  if (variables.twitter == false) Twitter = "mafewalker";
+  if (variables.twitter == null) Twitter = "https://twitter.com/MafeWalker";
+  if (Twitter !== "https://twitter.com/MafeWalker")
+    Twitter = "https://twitter.com/4geeksacademy";
+  let Github = variables.github;
+  if (variables.github == null) Github = "https://github.com/mafewalker";
+  if (Github !== "https://github.com/mafewalker")
+    Github = "https://github.com/4geeksacademy";
   let Linkedin = variables.linkedin;
-  if (variables.linkedin == false) Linkedin = "mafewalker";
+  if (variables.linkedin == null) Linkedin = "https://linkedin.com/mafe.walker";
+  if (Linkedin !== "https://linkedin.com/mafe.walker")
+    Linkedin = "https://linkedin.com/4geeksacademy";
   let Instagram = variables.instagram;
-  if (variables.instagram == false) Instagram = "mafewalker";
+  if (variables.instagram == null)
+    Instagram = "https://instagram.com/mafewalker";
+  if (Instagram !== "https://instagram.com/mafewalker")
+    Instagram = "https://instagram.com/4geeksacademy";
   let Estado = variables.city;
-  if (variables.Position == false) Position = 'class="position-right"';
-  let Contry = variables.country;
-  if (variables.Position == false) Position = 'class="position-right"';
+  if (variables.city == null) Estado = "New Marte";
+  let Country = variables.country;
+  if (variables.country == null) Country = "Tangamandapio";
   let Position = `class="${variables.socialMediaPosition}"`;
-  if (variables.Position == false) Position = 'class="position-right"';
+  if (variables.Position == null) Position = 'class="position-right"';
 
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
@@ -55,12 +64,12 @@ function render(variables = {}) {
           <img src="${variables.avatarURL}" class="photo" />
           <h1>${Name} ${LastName}</h1>
           <h2>${Job}</h2>
-          <h3>${Estado}, ${Contry}</h3>
+          <h3>${Estado}, ${Country}</h3>
           <ul ${Position}>
-            <li><a href="https://twitter.com/4geeksacademy"><i class="bi bi-twitter"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy"><i class="bi bi-github"></i></a></li>
-            <li><a href="https://linkedin.com/4geeksacademy"><i class="bi bi-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="bi bi-instagram"></i></a></li>
+            <li><a href=${Twitter}><i class="bi bi-twitter"></i></a></li>
+            <li><a href=${Github}><i class="bi bi-github"></i></a></li>
+            <li><a href=${Linkedin}><i class="bi bi-linkedin"></i></a></li>
+            <li><a href=${Instagram}><i class="bi bi-instagram"></i></a></li>
           </ul>
         </div>
     `;

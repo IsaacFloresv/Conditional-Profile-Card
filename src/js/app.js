@@ -37,9 +37,8 @@ function render(variables = {}) {
     Background = "https://images.unsplash.com/photo-1511974035430-5de47d3b95da";
   // Cambio en el avatarURL
   let AvatarURL = variables.avatarURL;
-  if (variables.name == null)
-    AvatarURL = "https://randomuser.me/api/portraits/women/42.jpg";
-  // Cambio en lastname
+  if (variables.name !== "Mafe")
+    !AvatarURL = "https://randomuser.me/api/portraits/women/42.jpg"; // Cambio en lastname
   let LastName = variables.lastname;
   if (variables.lastname == null) LastName = "Walker";
   // Cambio en role

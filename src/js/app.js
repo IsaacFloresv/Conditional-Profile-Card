@@ -30,8 +30,11 @@ function render(variables = {}) {
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
   let Name = variables.name;
   if (variables.name == null) Name = "Mafe";
+  let Background = variables.background;
+  if (variables.name == null)
+    Background = "https://images.unsplash.com/photo-1511974035430-5de47d3b95da";
   let AvatarURL = variables.avatarURL;
-  if (variables.name == null) AvatarURL = "src/js/img/ mw.png";
+  if (variables.name == null) AvatarURL = "/img/ mw.png";
   if (Name != "Mafer")
     variables.avatarURL = "https://randomuser.me/api/portraits/women/42.jpg";
   let LastName = variables.lastname;
@@ -87,9 +90,9 @@ window.onload = function() {
     // if includeCover is true the algorithm should
     includeCover: true,
     // this is the url of the image that will used as background for the profile cover
-    background: "https://images.unsplash.com/photo-1511974035430-5de47d3b95da",
+    background: "src/img/Tierraluna.jpg",
     // this is the url for the profile avatar
-    avatarURL: null,
+    avatarURL: "src/img/mw.png",
     // social media bar position (left or right)
     socialMediaPosition: "position-left",
     // social media usernames

@@ -74,16 +74,16 @@ function render(variables = {}) {
   if (variables.country == null) Country = "Tangamandapio";
   // Cambio en socialMedidaPosition
   let Position = variables.socialMediaPosition;
-  if (variables.Position == null) Position = 'class="position-right"';
+  if (variables.socialMediaPosition == null) Position = '"position-right"';
 
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover} 
-          <img src=${variables.avatarURL} class="photo" />
+          <img src=${AvatarURL} class="photo" />
           <h1>${Name} ${LastName}</h1>
           <h2>${Job}</h2>
           <h3>${Estado}, ${Country}</h3>
-          <ul ${Position}>
+          <ul class=${Position}>
             <li><a href=${Twitter}><i class="bi bi-twitter"></i></a></li>
             <li><a href=${Github}><i class="bi bi-github"></i></a></li>
             <li><a href=${Linkedin}><i class="bi bi-linkedin"></i></a></li>

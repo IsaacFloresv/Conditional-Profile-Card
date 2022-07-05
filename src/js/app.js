@@ -28,46 +28,57 @@ function render(variables = {}) {
   // if includeCover==false then we reset the cover code without the <img> tag to make the cover transparent.
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
+  // Cambio en el nombre
   let Name = variables.name;
   if (variables.name == null) Name = "Mafe";
+  // Cambio en el backgroud
   let Background = variables.background;
   if (variables.name == null)
     Background = "https://images.unsplash.com/photo-1511974035430-5de47d3b95da";
+  // Cambio en el avatarURL
   let AvatarURL = variables.avatarURL;
-  if (variables.name == null) AvatarURL = "/img/ mw.png";
-  if (Name != "Mafer")
-    variables.avatarURL = "https://randomuser.me/api/portraits/women/42.jpg";
+  if (variables.name == null)
+    AvatarURL = "https://randomuser.me/api/portraits/women/42.jpg";
+  // Cambio en lastname
   let LastName = variables.lastname;
   if (variables.lastname == null) LastName = "Walker";
+  // Cambio en role
   let Job = variables.role;
   if (variables.role == null) Job = "Interprete";
+  // Cambio en twitter
   let Twitter = variables.twitter;
   if (variables.twitter == null) Twitter = "https://twitter.com/MafeWalker";
   if (Twitter !== "https://twitter.com/MafeWalker")
     Twitter = "https://twitter.com/" + Twitter;
+  // Cambio en github
   let Github = variables.github;
   if (variables.github == null) Github = "https://github.com/mafewalker";
   if (Github !== "https://github.com/mafewalker")
     Github = "https://github.com/" + Github;
   let Linkedin = variables.linkedin;
+  // Cambio en linkedin
   if (variables.linkedin == null) Linkedin = "https://linkedin.com/mafe.walker";
   if (Linkedin !== "https://linkedin.com/mafe.walker")
     Linkedin = "https://linkedin.com/" + Linkedin;
+  // Cambio en Instagram
   let Instagram = variables.instagram;
   if (variables.instagram == null)
     Instagram = "https://instagram.com/mafewalker";
   if (Instagram !== "https://instagram.com/mafewalker")
     Instagram = "https://instagram.com/" + Instagram;
+  // Cambio en city
   let Estado = variables.city;
   if (variables.city == null) Estado = "New Marte";
+  // Cambio en country
   let Country = variables.country;
   if (variables.country == null) Country = "Tangamandapio";
-  let Position = `class="${variables.socialMediaPosition}"`;
+  // Cambio en socialMedidaPosition
+  let Position = variables.socialMediaPosition;
   if (variables.Position == null) Position = 'class="position-right"';
 
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
-            ${cover}
+            ${cover} 
           <img src=${variables.avatarURL} class="photo" />
           <h1>${Name} ${LastName}</h1>
           <h2>${Job}</h2>

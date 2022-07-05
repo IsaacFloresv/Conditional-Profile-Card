@@ -28,17 +28,18 @@ function render(variables = {}) {
   // if includeCover==false then we reset the cover code without the <img> tag to make the cover transparent.
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
+  // Cambio en el backgroud y Cambio en el avatarURL
+  let Background = variables.background;
+  let AvatarURL = variables.avatarURL;
+  if (variables.name != "Mafe" && variables.name != null) {
+    Background = "https://images.unsplash.com/photo-1511974035430-5de47d3b95da";
+    cover = `<div class="cover"><img src="${Background}" /></div>`;
+    AvatarURL = "https://randomuser.me/api/portraits/women/42.jpg";
+  }
   // Cambio en el nombre
   let Name = variables.name;
   if (variables.name == null) Name = "Mafe";
-  // Cambio en el backgroud
-  let Background = variables.background;
-  if (variables.name == null)
-    Background = "https://images.unsplash.com/photo-1511974035430-5de47d3b95da";
-  // Cambio en el avatarURL
-  let AvatarURL = variables.avatarURL;
-  if (variables.name !== "Mafe")
-    !AvatarURL = "https://randomuser.me/api/portraits/women/42.jpg"; // Cambio en lastname
+  // Cambio en lastname
   let LastName = variables.lastname;
   if (variables.lastname == null) LastName = "Walker";
   // Cambio en role
